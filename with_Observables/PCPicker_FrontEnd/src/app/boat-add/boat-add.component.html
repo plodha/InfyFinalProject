@@ -1,0 +1,105 @@
+<br>
+<br>
+<div *ngIf="message==null"> <!-- Line 1 -->
+<div class="row">
+<div class="col-md-6 col-md-offset-3 bordering-side">
+<h2>Enter the details to add a boat</h2>
+<form [formGroup]="boatAddForm" (ngSubmit)="addBoat()">
+<table class="table table-condensed">
+        <tr>
+          <th>Boat Type:</th>
+          <td>
+              <select class="form-control" formControlName="boatType">
+                <option *ngFor="let boatType of boatTypes" [value]="boatType">{{boatType}}</option>
+              </select>
+              <div class="bg-danger" *ngIf="boatAddForm.get('boatType').invalid && boatAddForm.get('boatType').touched">
+                <strong class="text-danger">Please select a Boat Type!</strong>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th>Location:</th>
+              <td>
+                <select class="form-control" formControlName="location">
+                  <option *ngFor="let location of locations" [value]="location">{{location}}</option>
+                </select>
+                <div class="bg-danger" *ngIf="boatAddForm.get('location').invalid && boatAddForm.get('location').touched">
+                  <strong class="text-danger">Please select a Location!</strong>
+                </div>
+              </td>
+            </tr>
+          <tr>
+            <th>Description</th>
+              <td>
+                <textarea class="form-control" formControlName="description"></textarea>
+                <div class="bg-danger" *ngIf="boatAddForm.get('description').invalid && boatAddForm.get('description').touched">
+                  <div *ngIf="boatAddForm.controls.description.hasError('required')">
+                    <strong class="text-danger">Description is mandatory.</strong>
+                  </div>
+                  <div *ngIf="boatAddForm.controls.description.hasError('minlength')">
+                    <strong class="text-danger">The length of the value entered should be at least 10.</strong>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>Base Price:</th>
+              <td>
+                <input class="form-control" type="number" formControlName="basePrice" />
+                <div class="bg-danger" *ngIf="boatAddForm.get('basePrice').invalid && boatAddForm.get('basePrice').touched">
+                  <strong class="text-danger">BasePrice is mandatory.</strong>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>Discount:</th>
+                <td>
+                  <input class="form-control" formControlName="discount" />
+                  <div class="bg-danger" *ngIf="boatAddForm.get('discount').invalid && boatAddForm.get('discount').touched">
+                    <strong class="text-danger">Discount is mandatory.</strong>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Booking starts from:</th>
+                <td>
+                  <input class="form-control" type="date" formControlName="bookingStart" />
+                  <div class="bg-danger" *ngIf="boatAddForm.get('bookingStart').invalid && boatAddForm.get('bookingStart').touched">
+                    <strong class="text-danger">BookingStartDate is mandatory.</strong>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Days Allowed for Booking</th>
+                <td>
+                  <input type="number" class="form-control" formControlName="allowedDays" />
+                  <div class="bg-danger" *ngIf="boatAddForm.get('allowedDays').invalid && boatAddForm.get('allowedDays').touched">
+                    <div *ngIf="boatAddForm.controls.allowedDays.hasError('required')">
+                      <strong class="text-danger">AllowedDays is mandatory.</strong>
+                    </div>
+                    <div *ngIf="!boatAddForm.controls.allowedDays.hasError('required') && 
+                           boatAddForm.controls.allowedDays.hasError('allowedDaysValue')">
+                        <strong class="text-danger">The value should be between 1 and 7.</strong>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+          </table>
+          <div class="row">              
+              <button [disabled]="!boatAddForm.valid || boatAddForm.pristine"
+              class="col-md-4 col-md-offset-4 btn btn-success form-button" >Add Details</button>
+          </div>
+          <div class="row" *ngIf="message!=null">
+              
+              <h2 class="text text-success">{{message}}</h2> <!-- Line 2 -->
+              
+              </div>
+      </form>
+    </div>
+</div>
+</div>
+<div class="row" *ngIf="message!=null">
+    
+    <h2 class="text text-success">{{message}}</h2> <!-- Line 2 -->
+    
+    </div>

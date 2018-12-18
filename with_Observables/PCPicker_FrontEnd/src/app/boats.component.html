@@ -1,0 +1,59 @@
+<!--<h3 style="text-align: center">Showing all the operational boats across India</h3>
+
+
+<div [ngClass]="{'row':true}">
+    <div [ngClass]="{'col-md-5':true,'col-md-offset-2':true,'bordering':true}">
+    -->
+    <div *ngIf="!addBoatFlag"><!-- Line 1 -->
+        <h3>Showing all the operational boats across India</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-2 bordering" *ngIf="!addBoatFlag"><!-- Line 2 -->
+        <table [ngClass]="{'table':true,'table-striped':true,
+'table-responsive':true}">
+
+        <tr>
+            <th>
+                <label>Boat Type:</label>
+            </th>
+            <th>
+                <label>Location:</label>
+            </th>
+            <th>
+                <label>Price:</label>
+            </th>
+            <th>
+                <label>BookingStartDate:</label>
+            </th>
+            <th>MoreDetails</th>
+        </tr>
+
+
+        <tr *ngFor="let boat of boatData">
+            <td>{{boat.boatType| uppercase}}</td>
+            <td>
+                {{boat.location}}
+
+            </td>
+            <td>
+                {{boat.basePrice |currency:'USD':true}}
+            </td>
+            <td>
+                {{boat.bookingStart|date}}
+
+            </td>
+          
+            <td>
+                <a [routerLink]="['/boat', boat.boatId]"><div class="btn btn-primary">View or Update details</div></a>
+            </td>
+        </tr>
+    </table>
+</div>
+<!--
+<div *ngIf="show">
+<boat-details [chosenBoat]="displayBoat"></boat-details>
+   
+</div>
+-->
+
+</div>
