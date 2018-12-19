@@ -30,12 +30,12 @@ INSERT INTO PC_Details VALUES ('6','Personal','653','The power or sailing style 
 
 drop table PCUser cascade constraints;
 CREATE TABLE PCUser(
-	userName VARCHAR2(50) NOT NULL,
 	userId VARCHAR2(10) NOT NULL,
 	password VARCHAR2(50) NOT NULL,
+	userName VARCHAR2(50) NOT NULL,
 	email VARCHAR2(50) NOT NULL,
 	mobileNo VARCHAR2(10) NOT NULL,
-	creditScore VARCHAR2(10) NOT NULL,
+	creditScore VARCHAR2(3) NOT NULL,
 	CONSTRAINT pk_PCUser_tId PRIMARY KEY(userId),
 		
 
@@ -55,14 +55,14 @@ CREATE TABLE Computer_Purchase_Details(
 
 
 
-INSERT INTO Ginger_King_Users VALUES ('2001','Angad@123','Angad Singh Bindra','Admin','angad.bindra@infosys.com','9900787845','Active');
-INSERT INTO Ginger_King_Users VALUES ('2002','Punya@123','Punyapriya Pradhan','Admin','punyapriya.pradhan@infosys.com','8899112233','Active');
-INSERT INTO Ginger_King_Users VALUES ('2003','Abhi@123','Abhishek Sadanand','User','abhishek.c25@infosys.com','7788991234','Active');
-INSERT INTO Ginger_King_Users VALUES ('2004','Sum@123','Sumeet Kumar Barua','User','sumeet_kumar08@infosys.com','9945451230','Active');
-INSERT INTO Ginger_King_Users VALUES ('2005','Shakti@123','Shakti Lenka','User','shakti.lenka@infosys.com','9898457612','Active');
-INSERT INTO Ginger_King_Users VALUES ('2006','Sunil@123','Sunil Das','User','sunil.das01@infosys.com','7788678901','Active');
-INSERT INTO Ginger_King_Users VALUES ('2007','Deepa@123','Deepa Singh','User','deepa01@infosys.com','9876123400','Active');
-INSERT INTO Ginger_King_Users VALUES ('2008','Aahil@123','Aahil Khan','User','aahil.khan01@infosys.com','8989006745','Active');
+INSERT INTO PCUser VALUES ('1001','Jane#Cat','Jane Catfish','jane.cat@infosys.com','8695748321','230');
+INSERT INTO PCUser VALUES ('1002','Bale#Don','Bale Donut','bale.don@infosys.com','9584738576','745');
+INSERT INTO PCUser VALUES ('1003','Gale#Glo','Gale Glow','gale.gloc25@infosys.com','5860396849','386');
+INSERT INTO PCUser VALUES ('1004','Sunj#Pra','Sunjay Pranav','sunj.pra08@infosys.com','2960439628','850');
+INSERT INTO PCUser VALUES ('1005','Chri#Pal','Christine Pale','chri.pal@infosys.com','9584766751','1');
+INSERT INTO PCUser VALUES ('1006','Dest#Joh','Destiny John','dest.joh@infosys.com','1069228395','100');
+INSERT INTO PCUser VALUES ('1007','Hele#Hac','Helen Hack','hele.hac@infosys.com','5504987362','804');
+INSERT INTO PCUser VALUES ('1008','Chet#Poo','Chetan Pool','chet.poo@infosys.com','6079382758','669');
 
 INSERT INTO Boat_Booking_Details VALUES ('5001','1005','2003','05-MAR-2017','09-MAR-2017',3996,7788991234,null);
 INSERT INTO Boat_Booking_Details VALUES ('5002','1002','2004','06-MAR-2017','08-MAR-2017',1998,9945451230,0.05);
