@@ -1,8 +1,21 @@
 package com.infy.entity;
+import java.util.Calendar;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
+
+
 
 @Entity
 @GenericGenerator(name="usersGenerator", strategy="sequence",
-parameters = {@Parameters(name="sequence", value="users_sequence_pk")})
+parameters = {@Parameter(name="sequence", value="users_sequence_pk")})
 @Table(name = "PCUser")
 public class UserEntity {
 	private String userName;

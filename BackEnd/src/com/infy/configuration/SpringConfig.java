@@ -30,8 +30,8 @@ public class SpringConfig {
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
 		dataSource.setUrl("jdbc:oracle:thin:@10.123.79.59:1521:georli04");
-		dataSource.setUsername("T1023216");
-		dataSource.setPassword("T1023216");
+		dataSource.setUsername("T1023210");
+		dataSource.setPassword("T1023210");
 		return dataSource;
 	}
 

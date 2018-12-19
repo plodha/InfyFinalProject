@@ -1,22 +1,21 @@
 package com.infy.dao;
+
+import org.hibernate.query.Query;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.query.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.infy.entity.ComputerPurchaseEntity;
-import com.infy.entity.ComputerPurchaseEntity;
 import com.infy.entity.ComputerEntity;
-import com.infy.entity.ComputerEntity;
+import com.infy.entity.ComputerPurchaseEntity;
 import com.infy.entity.UserEntity;
 import com.infy.model.Computer;
 import com.infy.model.ComputerPurchase;
-import com.infy.model.Computer;
-import com.infy.model.ComputerPurchase;
+
 import com.infy.model.User;
 
 @Repository
@@ -47,7 +46,7 @@ public class ComputerDAOImpl implements ComputerDAO {
 			b.setComputerId(i.getComputerId().toString());
 			b.setComputerType(i.getComputerType());
 			b.setComputerPrice(i.getComputerPrice());
-			
+
 
 			allComputers.add(b);
 
@@ -68,11 +67,11 @@ public class ComputerDAOImpl implements ComputerDAO {
 		ComputerEntity computerEntity= (ComputerEntity) session.get(ComputerEntity.class, pk);
 		Computer computer= new Computer();
 		if (computerEntity != null) {
-			
-			computer.setComputerId(ComputerId);
+
+			computer.setComputerId(computerId);
 			computer.setComputerType(computerEntity.getComputerType());
 			computer.setComputerPrice(computerEntity.getComputerPrice());
-			
+
 			return computer;
 		}
 		return null;
@@ -88,7 +87,7 @@ public class ComputerDAOImpl implements ComputerDAO {
 		ComputerEntity be = new ComputerEntity();
 
 		be.setComputerType(computer.getComputerType());
-		be.setComputerId(computer.getcomputerId());
+		be.setComputerId(computer.getComputerId());
 		be.setComputerPrice(computer.getComputerPrice());			
 		computer.setComputerId(session.save(be).toString());		
 		return computer;
@@ -105,25 +104,25 @@ public class ComputerDAOImpl implements ComputerDAO {
 
 		if (computerEntity != null) {
 
-			
+
 			computerEntity.setComputerPrice(computer.getComputerPrice());
 			computerEntity.setComputerType(computer.getComputerType());
-			computerEntity.setComputerId(computer.getcomputerId());
-			
-			
+			computerEntity.setComputerId(computer.getComputerId());
+
+
 
 		}
 
 		return computer;
 	}
 
-	
-	}
+
+
 
 	//*************  BOAT--BOOKING  **************************
 
 	@Override
-	public ComputerPurchase bookComputer(ComputerPurchase computerPurchase) throws Exception {
+	public ComputerPurchase purchaseComputer(ComputerPurchase computerPurchase) throws Exception {
 
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
@@ -135,9 +134,13 @@ public class ComputerDAOImpl implements ComputerDAO {
 
 
 		be.setPurchaseDate(computerPurchase.getPurchaseDate());
-				
+
 		return computerPurchase;
-	}	
+	}
+
+
+
+
 }
 
 

@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.infy.model.Computer;
-import com.infy.service.ComputersService;
-import com.infy.service.ComputersServiceImpl;
+import com.infy.service.ComputerService;
+import com.infy.service.ComputerServiceImpl;
 import com.infy.utility.ContextFactory;
 
 @RestController
@@ -24,7 +24,7 @@ public class ComputerSpringRESTAPI {
 
 	//======================      COMPUTER API       ========================================================================
 
-	private ComputersService ComputersService;
+	private ComputerService ComputerService;
 	//********************** Fetch all available BOATS  ******************
 
 	@RequestMapping(method=RequestMethod.GET, value="computersAll")
@@ -34,10 +34,10 @@ public class ComputerSpringRESTAPI {
 		ResponseEntity<List<Computer>> responseEntity=null;
 
 		List<Computer> allComputers=new ArrayList<Computer>();
-		ComputersService = (ComputersService) ContextFactory.getContext().getBean(ComputersServiceImpl.class);
+		ComputerService = (ComputerService) ContextFactory.getContext().getBean(ComputerServiceImpl.class);
 		
 		try {
-			allComputers=ComputersService.getAllComputers();
+			allComputers=ComputerService.getAllComputer();
 			responseEntity = new ResponseEntity<>(allComputers,HttpStatus.OK);
 
 		}
@@ -65,9 +65,9 @@ public class ComputerSpringRESTAPI {
 		Environment environment= ContextFactory.getContext().getEnvironment();
 		ResponseEntity<Computer> responseEntity=null;
 		Computer returnComputer = new Computer();
-		ComputersService = (ComputersService) ContextFactory.getContext().getBean(ComputersServiceImpl.class);
+		ComputerService = (ComputerService) ContextFactory.getContext().getBean(ComputerServiceImpl.class);
 		try {
-			returnComputer=ComputersService.getComputerById(computerId);
+			returnComputer=ComputerService.getComputerById(computerId);
 			
 			responseEntity = new ResponseEntity<Computer>(returnComputer,HttpStatus.OK);
 
@@ -99,11 +99,11 @@ public class ComputerSpringRESTAPI {
 		Environment environment= ContextFactory.getContext().getEnvironment();
 		ResponseEntity<Computer> responseEntity=null;
 		Computer returnUpdatedComputer = new Computer();
-		ComputersService = (ComputersService) ContextFactory.getContext().getBean(ComputersServiceImpl.class);
+		ComputerService = (ComputerService) ContextFactory.getContext().getBean(ComputerServiceImpl.class);
 		
 		try {
-			returnUpdatedComputer=ComputersService.updateComputer(computerToUpdate);
-			returnUpdatedComputer.setMessage(environment.getProperty("ComputersService.PCPicker.PC_UPDATE_SUCCESS"));
+			returnUpdatedComputer=ComputerService.updateComputer(computerToUpdate);
+			returnUpdatedComputer.setMessage(environment.getProperty("ComputerService.PCPicker.PC_UPDATE_SUCCESS"));
 			responseEntity = new ResponseEntity<Computer>(returnUpdatedComputer,HttpStatus.OK);
 
 		}
@@ -130,10 +130,10 @@ public class ComputerSpringRESTAPI {
 		Environment environment= ContextFactory.getContext().getEnvironment();
 		ResponseEntity<Computer> responseEntity=null;
 		Computer returnAddedComputer = new Computer();
-		ComputersService = (ComputersService) ContextFactory.getContext().getBean(ComputersServiceImpl.class);
+		ComputerService = (ComputerService) ContextFactory.getContext().getBean(ComputerServiceImpl.class);
 		
 		try {
-			returnAddedComputer=ComputersService.addComputer(computerToAdd);
+			returnAddedComputer=ComputerService.addComputer(computerToAdd);
 			returnAddedComputer.setMessage(environment.getProperty("PCPicker.PC_ADD_SUCCESS"));
 			responseEntity = new ResponseEntity<Computer>(returnAddedComputer,HttpStatus.OK);
 

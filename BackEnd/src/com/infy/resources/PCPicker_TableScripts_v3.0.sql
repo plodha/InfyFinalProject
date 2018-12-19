@@ -14,7 +14,7 @@ CREATE TABLE PC_Details(
     computerId VARCHAR2(10) NOT NULL,
     computerType VARCHAR2(50) NOT NULL,
     computerPrice NUMBER NOT NULL,
-    CONSTRAINT pk_PC_Details_tId PRIMARY KEY(computerId),
+    CONSTRAINT pk_PC_Details_tId PRIMARY KEY(computerId));
 	
 	
 	
@@ -36,8 +36,8 @@ CREATE TABLE PCUser(
 	email VARCHAR2(50) NOT NULL,
 	mobileNo VARCHAR2(10) NOT NULL,
 	creditScore VARCHAR2(3) NOT NULL,
-	CONSTRAINT pk_PCUser_tId PRIMARY KEY(userId),
-		
+	CONSTRAINT pk_PCUser_tId PRIMARY KEY(userId)
+		);
 
 	
 drop table Computer_Purchase_Details cascade constraints;
