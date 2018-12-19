@@ -1,3 +1,4 @@
+package com.infy.api;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +16,8 @@ import com.infy.model.Computer;
 import com.infy.service.ComputerService;
 import com.infy.service.ComputerServiceImpl;
 import com.infy.utility.ContextFactory;
+
+
 
 @RestController
 @CrossOrigin
@@ -37,7 +40,7 @@ public class ComputerSpringRESTAPI {
 		ComputerService = (ComputerService) ContextFactory.getContext().getBean(ComputerServiceImpl.class);
 		
 		try {
-			allComputers=ComputerService.getAllComputer();
+			allComputers=ComputerService.getAllComputers();
 			responseEntity = new ResponseEntity<>(allComputers,HttpStatus.OK);
 
 		}

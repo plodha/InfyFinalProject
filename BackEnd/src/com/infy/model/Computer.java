@@ -23,4 +23,13 @@ public class Computer {
 	public void setComputerPrice(Double computerPrice) {
 		this.computerPrice = computerPrice;
 	}
+	
+	private String message;
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 }
