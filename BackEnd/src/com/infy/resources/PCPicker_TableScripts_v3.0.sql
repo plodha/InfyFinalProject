@@ -18,13 +18,13 @@ CREATE TABLE PC_Details(
 	
 	
 	
-INSERT INTO Boat_Details VALUES ('1001','Houseboat','Alappuzha','These boats offer the luxury of living on water and provide excellent recreational and holiday accommodation facilities.',6666,1,0.05,SYSDATE+6);
-INSERT INTO Boat_Details VALUES ('1002','Cruiser','Alappuzha','These boats are apt for relaxed sailing and include a galley and a berth. All modern comforts like heaters, air conditioners, and power generators are enclosed in the arrangement.',66666,5,null,SYSDATE+6);
-INSERT INTO Boat_Details VALUES ('1003','Bass Boat','Kumarkom','Bass boats are generally 14 to 23 feet, and typically used for freshwater fishing.',999,5,0.05,SYSDATE+10);
-INSERT INTO Boat_Details VALUES ('1004','Cruiser','Kumarkom','These boats are apt for relaxed sailing and include a galley and a berth. All modern comforts like heaters, air conditioners, and power generators are enclosed in the arrangement.',66666,5,0.10,SYSDATE+9);
-INSERT INTO Boat_Details VALUES ('1005','Speed Boat','Srinagar','Performance powerboats, built for speed.',10000,null,0.05,SYSDATE+3);
-INSERT INTO Boat_Details VALUES ('1006','Houseboat','Srinagar','These boats offer the luxury of living on water and provide excellent recreational and holiday accommodation facilities.',999,3,0.0667,SYSDATE+1);
-INSERT INTO Boat_Details VALUES ('1007','Power Catamaran','Srinagar','The power or sailing style catamarans comprise of multiple hulls and are excellent for fishing purposes and even for leisurely cruising abilities.',999,6,null,SYSDATE+5);
+INSERT INTO PC_Details VALUES ('0','Business','400','These boats offer the luxury of living on water and provide excellent recreational and holiday accommodation facilities.',6666,1,0.05,SYSDATE+6);
+INSERT INTO PC_Details VALUES ('1','Gaming','350','These boats are apt for relaxed sailing and include a galley and a berth. All modern comforts like heaters, air conditioners, and power generators are enclosed in the arrangement.',66666,5,null,SYSDATE+6);
+INSERT INTO PC_Details VALUES ('2','Personal','200','Bass boats are generally 14 to 23 feet, and typically used for freshwater fishing.',999,5,0.05,SYSDATE+10);
+INSERT INTO PC_Details VALUES ('3','Business','1002','These boats are apt for relaxed sailing and include a galley and a berth. All modern comforts like heaters, air conditioners, and power generators are enclosed in the arrangement.',66666,5,0.10,SYSDATE+9);
+INSERT INTO PC_Details VALUES ('4','Gaming','1250','Performance powerboats, built for speed.',10000,null,0.05,SYSDATE+3);
+INSERT INTO PC_Details VALUES ('5','Personal','935','These boats offer the luxury of living on water and provide excellent recreational and holiday accommodation facilities.',999,3,0.0667,SYSDATE+1);
+INSERT INTO PC_Details VALUES ('6','Personal','653','The power or sailing style catamarans comprise of multiple hulls and are excellent for fishing purposes and even for leisurely cruising abilities.',999,6,null,SYSDATE+5);
 	
 
 
