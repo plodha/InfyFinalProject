@@ -1,0 +1,5 @@
+# Ignore WebContent Jars Files
+/BackEnd/WebContent
+
+# Ignore Node Modules
+/with_Observables/PCPicker_FrontEnd/node_modules
