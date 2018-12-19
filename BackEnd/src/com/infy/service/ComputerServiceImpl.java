@@ -14,7 +14,7 @@ import com.infy.model.User;
 
 @Service
 @Transactional(readOnly=true)
-public class ComputerServiceImpl {
+public class ComputerServiceImpl implements ComputerService{
 	@Autowired
 	private ComputerDAO computerDAO;
 
@@ -48,8 +48,8 @@ public class ComputerServiceImpl {
 		return updatedComputer;
 	}
 
-	public Computer getComputerById(String ComputerId) throws Exception {
-		Computer computerDetail=computerDAO.getComputerById(ComputerId);
+	public Computer getComputerById(String computerId) throws Exception {
+		Computer computerDetail=computerDAO.getComputerById(computerId);
 		if(computerDetail==null){
 			throw new Exception("PCPicker.PC_DOES_NOT_EXIST");
 		}
