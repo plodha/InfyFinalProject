@@ -41,7 +41,7 @@ public class ComputerServiceImpl {
 
 	@Override
 	public Computer getComputerById(String ComputerId) throws Exception {
-		Computer ComputerDetail=computerDAO.getComputerById(computerId);
+		Computer ComputerDetail=computerDAO.getComputerById(ComputerId);
 		if(computerDetail==null){
 			throw new Exception("PCPicker.PC_DOES_NOT_EXIST");
 		}
