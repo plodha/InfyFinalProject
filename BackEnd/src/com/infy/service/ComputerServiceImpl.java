@@ -10,7 +10,7 @@ public class ComputerServiceImpl {
 	public List<Computer> getAllComputers() throws Exception {
 		List<Computer> listOfComputers= computerDAO.getAllComputers();
 		if(listOfComputers.size()<=0){
-			throw new Exception("ComputerService.NO_COMPUTERS_AVAILABLE");
+			throw new Exception("PCPicker.NO_PCS_AVAILABLE");
 		}
 		return listOfComputers;
 	}
@@ -23,7 +23,7 @@ public class ComputerServiceImpl {
 	public Computer addComputer(Computer computer) throws Exception {
 		Computer addedComputer=computerDAO.addComputer(computer);
 		if(addedComputer==null){
-			throw new Exception("ComputerService.COMPUTER_NOT_ADDED");
+			throw new Exception("PCPicker.PC_NOT_ADDED");
 		}
 		return addedComputer;
 	}
@@ -34,7 +34,7 @@ public class ComputerServiceImpl {
 	public Computer updateComputer(Computer computer) throws Exception {
 		Computer updatedComputer=computerDAO.updateComputer(computer);
 		if(updatedComputer==null){
-			throw new Exception("ComputerService.COMPUTER_NOT_UPDATED");
+			throw new Exception("PCPicker.PC_NOT_UPDATED");
 		}
 		return updatedComputer;
 	}
@@ -43,7 +43,7 @@ public class ComputerServiceImpl {
 	public Computer getComputerById(String ComputerId) throws Exception {
 		Computer ComputerDetail=computerDAO.getComputerById(computerId);
 		if(computerDetail==null){
-			throw new Exception("ComputerService.COMPUTER_DOES_NOT_EXIST");
+			throw new Exception("PCPicker.PC_DOES_NOT_EXIST");
 		}
 		return ComputerDetail;
 	}
