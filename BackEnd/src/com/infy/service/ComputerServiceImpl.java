@@ -1,5 +1,7 @@
 package com.infy.service;
 
+import org.springframework.stereotype.Service;
+
 @Service
 @Transactional(readOnly=true)
 public class ComputerServiceImpl {
