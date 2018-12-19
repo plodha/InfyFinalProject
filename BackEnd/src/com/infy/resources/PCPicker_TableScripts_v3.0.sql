@@ -43,7 +43,7 @@ CREATE TABLE PCUser(
 drop table Computer_Purchase_Details cascade constraints;
 CREATE TABLE Computer_Purchase_Details(
 	purchaseId VARCHAR2(10) NOT NULL,
-	boatId VARCHAR2(10) NOT NULL,
+	computerId VARCHAR2(10) NOT NULL,
 	userId VARCHAR2(10) NOT NULL,
 	purchaseDate DATE,
 	totalCost NUMBER,
