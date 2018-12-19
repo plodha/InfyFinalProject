@@ -9,12 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.infy.entity.ComputerPurchaseEntity;
-import com.infy.entity.ComputerBookingEntity;
+import com.infy.entity.ComputerPurchaseEntity;
 import com.infy.entity.ComputerEntity;
 import com.infy.entity.ComputerEntity;
 import com.infy.entity.UserEntity;
 import com.infy.model.Computer;
-import com.infy.model.ComputerBooking;
+import com.infy.model.ComputerPurchase;
 import com.infy.model.Computer;
 import com.infy.model.ComputerPurchase;
 import com.infy.model.User;
@@ -51,7 +51,7 @@ public class ComputerDAOImpl implements ComputerDAO {
 			b.setDescription(i.getDescription());
 			b.setLocation(i.getLocation());
 			b.setDiscount(i.getDiscount());
-			b.setBookingStart(i.getBookingStart());
+			b.setPurchaseStart(i.getPurchaseStart());
 
 			allComputers.add(b);
 
@@ -79,7 +79,7 @@ public class ComputerDAOImpl implements ComputerDAO {
 			computer.setDescription(computerEntity.getDescription());
 			computer.setLocation(computerEntity.getLocation());
 			computer.setDiscount(computerEntity.getDiscount());
-			computer.setBookingStart(computerEntity.getBookingStart());
+			computer.setPurchaseStart(computerEntity.getPurchaseStart());
 
 
 			return computer;
@@ -103,7 +103,7 @@ public class ComputerDAOImpl implements ComputerDAO {
 		be.setLocation(computer.getLocation());
 
 		be.setDiscount(computer.getDiscount());
-		be.setBookingStart(computer.getBookingStart());			
+		be.setPurchaseStart(computer.getPurchaseStart());			
 		computer.setComputerId(session.save(be).toString());		
 		return computer;
 	}
@@ -126,7 +126,7 @@ public class ComputerDAOImpl implements ComputerDAO {
 			computerEntity.setLocation(computer.getLocation());
 
 			computerEntity.setDiscount(computer.getDiscount());
-			computerEntity.setBookingStart(computer.getBookingStart());
+			computerEntity.setPurchaseStart(computer.getPurchaseStart());
 
 		}
 
@@ -142,23 +142,23 @@ public class ComputerDAOImpl implements ComputerDAO {
 	//*************  BOAT--BOOKING  **************************
 
 	@Override
-	public ComputerBooking bookComputer(ComputerBooking computerBooking) throws Exception {
+	public ComputerPurchase bookComputer(ComputerPurchase computerPurchase) throws Exception {
 
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
 
 
-		ComputerBookingEntity be = new ComputerBookingEntity();
+		ComputerPurchaseEntity be = new ComputerPurchaseEntity();
 
-		be.setComputerId(computerBooking.getComputerId());
-		be.setUserId(computerBooking.getUserId());
+		be.setComputerId(computerPurchase.getComputerId());
+		be.setUserId(computerPurchase.getUserId());
 
-		be.setStartDate(computerBooking.getStartDate());
-		be.setEndDate(computerBooking.getEndDate());
-		be.setTotalCost(computerBooking.getTotalCost());
-		be.setMobileNo(computerBooking.getMobileNo());
-		be.setDiscount(computerBooking.getDiscount());			
-		return computerBooking;
+		be.setStartDate(computerPurchase.getStartDate());
+		be.setEndDate(computerPurchase.getEndDate());
+		be.setTotalCost(computerPurchase.getTotalCost());
+		be.setMobileNo(computerPurchase.getMobileNo());
+		be.setDiscount(computerPurchase.getDiscount());			
+		return computerPurchase;
 	}	
 }
 
